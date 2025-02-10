@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Contact Form</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
@@ -29,15 +30,15 @@
         <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
             <h2 class="text-2xl font-bold text-center mb-4">Contact Us</h2>
             <p class="text-gray-600 text-center mb-6">Got a question or feedback? Let us know!</p>
-            <form>
+            <form action="https://formspree.io/f/mrbeazep" method="POST">
                 <label class="block mb-2 text-gray-700 font-semibold">Your Email</label>
-                <input type="email" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com" required>
+                <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com" required>
                 
                 <label class="block mb-2 text-gray-700 font-semibold">Subject</label>
-                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Subject" required>
+                <input type="text" name="subject" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Subject" required>
                 
                 <label class="block mb-2 text-gray-700 font-semibold">Your Message</label>
-                <textarea class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Write your message here..." required></textarea>
+                <textarea  name="message" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Write your message here..." required></textarea>
                 
                 <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
             </form>
