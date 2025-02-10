@@ -30,7 +30,8 @@
         <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
             <h2 class="text-2xl font-bold text-center mb-4">Contact Us</h2>
             <p class="text-gray-600 text-center mb-6">Got a question or feedback? Let us know!</p>
-            <form action="https://formspree.io/f/mrbeazep" method="POST">
+            
+            <form id="contactForm" action="https://formspree.io/f/mrbeazep" method="POST">
                 <label class="block mb-2 text-gray-700 font-semibold">Your Email</label>
                 <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com" required>
                 
@@ -38,12 +39,43 @@
                 <input type="text" name="subject" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Subject" required>
                 
                 <label class="block mb-2 text-gray-700 font-semibold">Your Message</label>
-                <textarea  name="message" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Write your message here..." required></textarea>
+                <textarea name="message" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Write your message here..." required></textarea>
                 
                 <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
             </form>
+    
+            <p id="successMessage" class="hidden text-green-600 text-center font-semibold mt-4">Message sent successfully!</p>
         </div>
     </main>
+    
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        
+        let form = event.target;
+        let formData = new FormData(form);
+    
+        try {
+            let response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            });
+    
+            if (response.ok) {
+                document.getElementById("successMessage").classList.remove("hidden");
+                setTimeout(() => {
+                    location.reload();
+                }, 3000); // Обновление страницы через 3 секунды
+            } else {
+                alert("Error sending message. Please try again.");
+            }
+        } catch (error) {
+            alert("Network error. Please check your connection.");
+        }
+    });
+    </script>
+    
 
     <!-- Footer -->
     <footer class="bg-white text-center py-4 mt-12 shadow-md">
