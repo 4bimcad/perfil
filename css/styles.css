@@ -34,3 +34,8 @@ h1, h2, h3 {
         align-items: center;
         background-color: #f9f9f9;
 }
+
+.font-oxygen {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400; /* или 300, 700 в зависимости от стиля */
+  }

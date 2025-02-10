@@ -13,10 +13,10 @@ function addExperience() {
 
     newExperience.innerHTML = `
         <label class="block text-sm font-medium">Company Name</label>
-        <input type="text" id="company${experienceCount}" class="w-full border p-2 rounded mb-2" placeholder="Poliprom S.A.C." oninput="updatePreview(${experienceCount})">
+        <input type="text" id="company${experienceCount}" class="w-full border p-2 rounded mb-2" placeholder="Company" oninput="updatePreview(${experienceCount})">
 
         <label class="block text-sm font-medium">Location</label>
-        <input type="text" id="location${experienceCount}" class="w-full border p-2 rounded mb-2" placeholder="Lima, Peru" oninput="updatePreview(${experienceCount})">
+        <input type="text" id="location${experienceCount}" class="w-full border p-2 rounded mb-2" placeholder="City, Country" oninput="updatePreview(${experienceCount})">
 
         <label class="block text-sm font-medium">Date</label>
         <input type="text" id="date${experienceCount}" class="w-full border p-2 rounded mb-2" placeholder="05/2018 - Present" oninput="updatePreview(${experienceCount})">
