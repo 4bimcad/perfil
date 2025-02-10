@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>FAQ</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 w-full fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html">
+                <img src="logo.png" alt="CV Service Logo" class="h-10 w-auto">
+            </a>
+            <nav>
+                <ul class="flex space-x-8 text-lg font-semibold font-inter">
+                    <li><a href="pricing.html" class="hover:text-blue-800">Pricing</a></li>
+                    <li><a href="faq.html" class="hover:text-blue-800">FAQ</a></li>
+                    <li><a href="contacts.html" class="hover:text-blue-800">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="max-w-2xl mx-auto pt-20 px-6">
+        <h2 class="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="border rounded-lg overflow-hidden">
+                <button class="w-full text-left p-4 bg-white text-lg font-medium flex justify-between items-center" onclick="toggleAccordion(this)">
+                    How can I get started?
+                    <span>+</span>
+                </button>
+                <div class="p-4 bg-gray-50 hidden">Simply choose a free or paid plan, sign up, and start building your professional CV with our platform.</div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+                <button class="w-full text-left p-4 bg-white text-lg font-medium flex justify-between items-center" onclick="toggleAccordion(this)">
+                    What is included in the paid plan?
+                    <span>+</span>
+                </button>
+                <div class="p-4 bg-gray-50 hidden">The Pro Plan ($9/year) includes everything from the free version plus a personal subdomain, priority support, PDF/DOCX export, password-protected access, and more.</div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+                <button class="w-full text-left p-4 bg-white text-lg font-medium flex justify-between items-center" onclick="toggleAccordion(this)">
+                    Do you provide hosting?
+                    <span>+</span>
+                </button>
+                <div class="p-4 bg-gray-50 hidden">Yes! We host your CV on our servers under a free or paid subdomain (e.g., yourname.perfil.cv).</div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+                <button class="w-full text-left p-4 bg-white text-lg font-medium flex justify-between items-center" onclick="toggleAccordion(this)">
+                    Can I edit my CV?
+                    <span>+</span>
+                </button>
+                <div class="p-4 bg-gray-50 hidden">Yes! In the Pro Plan, we help format and edit your CV, ensuring a professional look.</div>
+            </div>
+            <div class="border rounded-lg overflow-hidden">
+                <button class="w-full text-left p-4 bg-white text-lg font-medium flex justify-between items-center" onclick="toggleAccordion(this)">
+                    How do I download my CV?
+                    <span>+</span>
+                </button>
+                <div class="p-4 bg-gray-50 hidden">With the Pro Plan, you can download your CV as a PDF or DOCX with one click.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('hidden');
+            button.querySelector('span').textContent = content.classList.contains('hidden') ? '+' : '-';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-white text-center py-4 mt-12 shadow-md">
+        <p class="text-gray-600">&copy; 2025 Perfil.CV. All rights reserved.</p>
+    </footer>
+</body>
+</html>
